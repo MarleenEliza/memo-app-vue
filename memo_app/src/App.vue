@@ -1,28 +1,56 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-app>
+    <v-list>
+      <memo-item
+        v-for="memo in storedMemo"
+        :key="memo.id"
+        :title="memo.title"
+        :description="memo.description"
+        :link="memo.link"
+      ></memo-item>
+    </v-list>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import MemoItem from "./components/memo-items/MemoItem.vue";
 
 export default {
-  name: "App",
   components: {
-    HelloWorld
-  }
+    MemoItem: MemoItem,
+  },
+  data() {
+    return {
+      storedMemo: [
+        {
+          id: "1",
+          title: "Memo 1",
+          description: "You should do this!",
+          link: "https://github.com",
+        },
+        {
+          id: "2",
+          title: "Memo 2",
+          description: "You should do this too!",
+          link: "https://google.com",
+        },
+      ],
+    };
+  },
 };
 </script>
 
+#global style
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+html {
+  font-family: "PT Sans", sans-serif;
+  box-sizing: border-box;
 }
+
+body{
+  margin: 0;
+}
+
 </style>

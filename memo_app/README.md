@@ -1,5 +1,7 @@
 # memo_app
 
+This is a practice project for Vue JS. In here, you can set, edit and delete memo's.
+
 ## Project setup
 ```
 npm install
