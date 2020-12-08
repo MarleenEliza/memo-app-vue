@@ -1,6 +1,22 @@
 # memo_app
 
-This is a practice project for Vue JS. In here, you can set, edit and delete memo's.
+VueJSのための簡単な練習プロジェクト。現在、メモを追加・削除可能。
+
+将来の追加予定：
+- 編集機能
+- バックエンドSQL　DB
+- デザイン改善
+- フィルター
+- 日付Input
+
+This is a practice project for Vue JS. In here, you can set and delete memo's.
+
+Future plans:
+- Add edit function
+- Add back-end SQL
+- Improve design
+- Add filter
+- Add date indicators
 
 ## Project setup
 ```
