@@ -7,8 +7,8 @@
       flat
       tile
       width="100%"
-      class="blue-grey lighten-4 --text text-left">
-      <v-card-title primary-title class="deep-purple lighten-2 justify-center">
+      class="blue-grey lighten-4 white--text text-left">
+      <v-card-title primary-title class="light-blue darken-4 justify-center">
         <h1>{{ title }} </h1>
       </v-card-title>
 

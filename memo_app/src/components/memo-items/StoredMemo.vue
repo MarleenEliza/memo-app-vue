@@ -3,6 +3,7 @@
       <memo-item
         v-for="memo in memos"
         :key="memo.id"
+        :id="memo.id"
         :title="memo.title"
         :description="memo.description"
         :link="memo.link"

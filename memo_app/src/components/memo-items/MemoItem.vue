@@ -12,7 +12,12 @@
         >
           View Details
         </v-btn>
-      <v-btn class="mx-2" fab dark color="error">
+      <v-btn 
+      class="mx-2" 
+      fab 
+      dark 
+      color="error"
+      @click="removeMemo(id)">
         <v-icon>mdi-trash-can</v-icon>
       </v-btn>
     </v-card-actions>
@@ -21,7 +26,8 @@
 
 <script>
 export default {
-  props: ["title", "description", "link"],
+  props: ["id","title", "description", "link"],
+  inject: ['removeMemo'],
 };
 </script>
 
