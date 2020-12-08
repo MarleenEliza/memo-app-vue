@@ -10,7 +10,7 @@
           text
           :href="link"
         >
-          View Details
+          {{ link }}
         </v-btn>
       <v-btn 
       class="mx-2" 

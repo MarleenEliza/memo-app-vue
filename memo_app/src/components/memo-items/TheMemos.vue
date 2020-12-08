@@ -40,19 +40,31 @@ export default {
   },
   data() {
     return {
-      selectedTab: "stored-memos",
+      selectedTab: "stored-memo",
       storedMemo: [
-        {
+         {
           id: "1",
-          title: "Memo 1",
-          description: "You should do this!",
-          link: "https://github.com",
+          title: "Add functions",
+          description: "Still need to add edit function, maybe filter too　編集・フィルター昨日追加要",
+          link: "https://v2.vuetifyjs.com/en/components/data-tables/",
         },
         {
           id: "2",
-          title: "Memo 2",
-          description: "You should do this too!",
-          link: "https://google.com",
+          title: "Project Code check",
+          description: "Take a look at the code of this Project!　コードをご確認してください！",
+          link: "https://github.com/MarleenEliza/memo-app-vue/tree/main/memo_app",
+        },
+        {
+          id: "3",
+          title: "Excercise Check JS",
+          description: "See my self-study excercises on Javascript!　　 独学でしているJavascriptの練習問題をご確認ください！",
+          link: "https://exercism.io/profiles/MarleenEliza",
+        },
+        {
+          id: "4",
+          title: "Excercise Check Python",
+          description: "See my self-study excercises on Python! 　　独学でしているPythonの練習問題をご確認ください！",
+          link: "https://www.hackerrank.com/marleeneliz4?hr_r=1",
         },
       ],
     };
@@ -73,7 +85,6 @@ export default {
       return this.selectedTab === type ? "primary" : "grey darken-2";
     },
 
-    // 
     addMemo(title, description, url) {
       const newMemo = {
         id: new Date().toISOString(),
@@ -85,9 +96,9 @@ export default {
       this.selectedTab = "stored-memo";
     },
     removeMemo(memoId) {
-      const memoIndex = this.storedMemo.findIndex(memo => memo.id === memoId);
+      const memoIndex = this.storedMemo.findIndex((memo) => memo.id === memoId);
       this.storedMemo.splice(memoIndex, 1);
-    }
+    },
   },
 };
 </script>

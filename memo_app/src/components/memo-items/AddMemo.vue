@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-form ref="form" v-model="valid" lazy-validation>
+    <v-form ref="form" v-model="valid">
       <v-text-field
         outlined
         v-model="title"
@@ -18,8 +18,16 @@
         label="Description"
       ></v-textarea>
 
+      <v-text-field
+        outlined
+        v-model="url"
+        :rules="urlRules"
+        label="URL"
+        ref="url"
+      ></v-text-field>
+
       <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">
-        Validate
+        Add Memo
       </v-btn>
     </v-form>
   </v-card>
@@ -27,7 +35,7 @@
 
 <script>
 export default {
-  inject: ['addMemo'],
+  inject: ["addMemo"],
   data() {
     return {
       valid: true,
@@ -43,6 +51,12 @@ export default {
           v === "" ||
           "Description must be less than 200 characters",
       ],
+      url: "",
+      urlRules: [
+        (v) =>
+          v === "" ||
+          /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/.test(v) || "URL must be valid",
+      ],
     };
   },
 
@@ -52,7 +66,7 @@ export default {
 
       const enteredTitle = this.$refs.title.value;
       const enteredDescription = this.$refs.description.value;
-      const enteredUrl = "www.google.nl"
+      const enteredUrl = this.$refs.url.value;
 
       this.addMemo(enteredTitle, enteredDescription, enteredUrl);
     },
