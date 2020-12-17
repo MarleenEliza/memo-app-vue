@@ -29,7 +29,7 @@ Vue JS、Vuetify
 * 所属：東京、日本
 * 連絡先：LinkedIn, 又はWantedlyでご連絡ください
 
-#ローカル環境でRunする場合の手順：
+# ローカル環境でRunする場合の手順：
 
 ## Project setup
 ```
